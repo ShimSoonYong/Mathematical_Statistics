@@ -8166,127 +8166,12 @@ $$</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <hr/>
-<table>
-<thead>
-<tr>
-<th><strong>분포</strong></th>
-<th><strong>확률 밀도 함수 (PDF)</strong></th>
-<th><strong>평균 (E[X])</strong></th>
-<th><strong>분산 (Var[X])</strong></th>
-<th><strong>적률생성함수 (MGF, $M_X(t)$)</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>정규 분포 (Normal)</strong></td>
-<td>$ f(x; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x - \mu)^2}{2\sigma^2}} $</td>
-<td>$ \mu $</td>
-<td>$ \sigma^2 $</td>
-<td>$ M_X(t) = e^{\mu t + \frac{1}{2}\sigma^2 t^2} $</td>
-</tr>
-<tr>
-<td><strong>지수 분포 (Exponential)</strong></td>
-<td>$ f(x; \lambda) = \lambda e^{-\lambda x}, \quad x \geq 0 $</td>
-<td>$ \frac{1}{\lambda} $</td>
-<td>$ \frac{1}{\lambda^2} $</td>
-<td>$ M_X(t) = \frac{\lambda}{\lambda - t}, \quad t &lt; \lambda $</td>
-</tr>
-<tr>
-<td><strong>카이제곱 분포 (Chi-Squared)</strong></td>
-<td>$ f(x; k) = \frac{1}{2^{k/2} \Gamma(k/2)} x^{k/2-1} e^{-x/2}, \quad x \geq 0 $</td>
-<td>$ k $</td>
-<td>$ 2k $</td>
-<td>$ M_X(t) = (1 - 2t)^{-k/2}, \quad t &lt; \frac{1}{2} $</td>
-</tr>
-<tr>
-<td><strong>감마 분포 (Gamma)</strong></td>
-<td>$ f(x; \alpha, \beta) = \frac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha - 1} e^{-\beta x}, \quad x \geq 0 $</td>
-<td>$ \frac{\alpha}{\beta} $</td>
-<td>$ \frac{\alpha}{\beta^2} $</td>
-<td>$ M_X(t) = \left( \frac{\beta}{\beta - t} \right)^\alpha, \quad t &lt; \beta $</td>
-</tr>
-<tr>
-<td><strong>베타 분포 (Beta)</strong></td>
-<td>$ f(x; \alpha, \beta) = \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)} x^{\alpha-1} (1 - x)^{\beta-1}, \quad 0 \leq x \leq 1 $</td>
-<td>$ \frac{\alpha}{\alpha + \beta} $</td>
-<td>$ \frac{\alpha\beta}{(\alpha + \beta)^2 (\alpha + \beta + 1)} $</td>
-<td>$ M_X(t) \text{는 존재하지 않음} $</td>
-</tr>
-<tr>
-<td><strong>이항 분포 (Binomial)</strong></td>
-<td>$ f(x; n, p) = \binom{n}{x} p^x (1 - p)^{n - x}, \quad x = 0, 1, \dots, n $</td>
-<td>$ np $</td>
-<td>$ np(1 - p) $</td>
-<td>$ M_X(t) = \left( 1 - p + pe^t \right)^n $</td>
-</tr>
-<tr>
-<td><strong>포아송 분포 (Poisson)</strong></td>
-<td>$ f(x; \lambda) = \frac{\lambda^x e^{-\lambda}}{x!}, \quad x = 0, 1, 2, \dots $</td>
-<td>$ \lambda $</td>
-<td>$ \lambda $</td>
-<td>$ M_X(t) = e^{\lambda(e^t - 1)} $</td>
-</tr>
-<tr>
-<td><strong>스튜던트 t 분포 (Student's t)</strong></td>
-<td>$ f(x; \nu) = \frac{\Gamma\left(\frac{\nu+1}{2}\right)}{\sqrt{\nu\pi}\Gamma\left(\frac{\nu}{2}\right)}\left(1 + \frac{x^2}{\nu}\right)^{-\frac{\nu+1}{2}} $</td>
-<td>$ 0 $</td>
-<td>$ \frac{\nu}{\nu - 2}, \quad \nu &gt; 2 $</td>
-<td>MGF는 존재하지 않음</td>
-</tr>
-<tr>
-<td><strong>F 분포 (F-distribution)</strong></td>
-<td>$ f(x; d_1, d_2) = \frac{\sqrt{ \left( \frac{d_1 x}{d_2} \right)^{d_1} \left(1 + \frac{d_1 x}{d_2} \right)^{-(d_1 + d_2)/2}} }{ B(d_1/2, d_2/2) } $</td>
-<td>$ \frac{d_2}{d_2 - 2}, \quad d_2 &gt; 2 $</td>
-<td>$ \frac{2d_2^2 (d_1 + d_2 - 2)}{d_1 (d_2 - 2)^2 (d_2 - 4)} $</td>
-<td>MGF는 존재하지 않음</td>
-</tr>
-<tr>
-<td><strong>베르누이 분포 (Bernoulli)</strong></td>
-<td>$ f(x; p) = p^x (1 - p)^{1 - x}, \quad x = 0, 1 $</td>
-<td>$ p $</td>
-<td>$ p(1 - p) $</td>
-<td>$ M_X(t) = 1 - p + pe^t $</td>
-</tr>
-<tr>
-<td><strong>기하 분포 (Geometric)</strong></td>
-<td>$ f(x; p) = (1 - p)^{x-1} p, \quad x = 1, 2, 3, \dots $</td>
-<td>$ \frac{1}{p} $</td>
-<td>$ \frac{1 - p}{p^2} $</td>
-<td>$ M_X(t) = \frac{pe^t}{1 - (1 - p)e^t}, \quad t &lt; -\ln(1-p) $</td>
-</tr>
-<tr>
-<td><strong>음이항 분포 (Negative Binomial)</strong></td>
-<td>$ f(x; r, p) = \binom{x + r - 1}{x} p^r (1 - p)^x, \quad x = 0, 1, 2, \dots $</td>
-<td>$ \frac{r(1 - p)}{p} $</td>
-<td>$ \frac{r(1 - p)}{p^2} $</td>
-<td>$ M_X(t) = \left( \frac{pe^t}{1 - (1 - p)e^t} \right)^r, \quad t &lt; -\ln(1-p) $</td>
-</tr>
-<tr>
-<td><strong>초기하 분포 (Hypergeometric)</strong></td>
-<td>$ f(x; N, K, n) = \frac{\binom{K}{x}\binom{N-K}{n-x}}{\binom{N}{n}}, \quad x = \max(0, n + K - N), \dots, \min(K, n) $</td>
-<td>$ \frac{nK}{N} $</td>
-<td>$ \frac{nK(N-K)(N-n)}{N^2(N-1)} $</td>
-<td>MGF는 존재하지 않음</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<hr/>
 <h3 id="%EC%B9%B4%EC%9D%B4%EC%A0%9C%EA%B3%B1-%EB%B6%84%ED%8F%AC-%EC%A0%95%EC%9D%98">카이제곱 분포 정의<a class="anchor-link" href="#%EC%B9%B4%EC%9D%B4%EC%A0%9C%EA%B3%B1-%EB%B6%84%ED%8F%AC-%EC%A0%95%EC%9D%98">¶</a></h3><p>카이제곱 분포는 정규분포를 따르는 독립 확률변수들의 제곱 합에 대한 분포입니다. 예를 들어, $ X_1, X_2, \dots, X_r $이 서로 독립이고 각 확률변수가 $ N(0, 1) $ 분포를 따른다고 가정할 때, 다음과 같이 정의된 확률변수 $ Y $는 카이제곱 분포를 따릅니다.</p>
 <p>$$
 Y = X_1^2 + X_2^2 + \dots + X_r^2
 $$</p>
 <p>여기서 $ Y $는 <strong>자유도 $ r $</strong> 을 가진 카이제곱 분포를 따르며, 이를 $ Y \sim \chi^2(r) $로 표기합니다.</p>
-<h3 id="%EC%B9%B4%EC%9D%B4%EC%A0%9C%EA%B3%B1-%EB%B6%84%ED%8F%AC%EC%99%80-%EA%B0%90%EB%A7%88-%EB%B6%84%ED%8F%AC%EC%9D%98-%EA%B4%80%EA%B3%84">카이제곱 분포와 감마 분포의 관계<a class="anchor-link" href="#%EC%B9%B4%EC%9D%B4%EC%A0%9C%EA%B3%B1-%EB%B6%84%ED%8F%AC%EC%99%80-%EA%B0%90%EB%A7%88-%EB%B6%84%ED%8F%AC%EC%9D%98-%EA%B4%80%EA%B3%84">¶</a></h3><p>카이제곱 분포는 감마 분포의 특수한 경우로 볼 수 있습니다. 일반적으로, 감마 분포 $ \text{Gam}(\alpha, \theta) $는 다음과 같은 확률밀도함수(pdf)를 가집니다.</p>
+<h3 id="%EC%B9%B4%EC%9D%B4%EC%A0%9C%EA%B3%B1-%EB%B6%84%ED%8F%AC%EC%99%80-%EA%B0%90%EB%A7%88-%EB%B6%84%ED%8F%AC%EC%9D%98-%EA%B4%80%EA%B3%84">카이제곱 분포와 감마 분포의 관계<a class="anchor-link" href="#%EC%B9%B4%EC%9D%B4%EC%A0%9C%EA%B3%B1-%EB%B6%84%ED%8F%AC%EC%99%80-%EA%B0%90%EB%A7%88-%EB%B6%84%ED%8F%AC%EC%9D%98-%EA%B4%80%EA%B3%84">¶</a></h3><p>카이제곱 분포는 감마 분포의 특수한 경우로 볼 수 있습니다. 일반적으로, 감마 분포 $ \text{Gam}(\alpha, \beta) $는 다음과 같은 확률밀도함수(pdf)를 가집니다.</p>
 <p>$$
 f(y; \alpha, \beta) = \frac{y^{\alpha - 1} e^{-y / \beta}}{\beta^\alpha \Gamma(\alpha)}, \quad y &gt; 0
 $$</p>
